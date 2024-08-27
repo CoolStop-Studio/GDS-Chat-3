@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="version-display"></div>
+    <div id="logo-display">
+        <img height="100%"
+            width="100%"
+            alt="logo" id="logo-image">
+    </div>
+    
+    <div id="login-form">
+        <div id="login-logo-display">
+            <img height="100%"
+                width="100%"
+                alt="logo" id="login-logo-image">
+        </div>
+
+        <div id="login-inputs" style="display: flex;">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button id="login-button" onclick="login()">Login</button>
+        </div>
+
+        <div id="create-account-inputs" style="display: none;">
+            <input type="text" id="new-username" placeholder="New Username" required>
+            <input type="password" id="new-password" placeholder="New Password" required>
+            <button id="create-account-button" onclick="createAccount()">Create Account</button>
+        </div>
+
+        <button id="toggle-form">Create New Account</button>
+    </div>
+
+    <div id="app-container" style="display: none;">
+        <div id="sidebar">
+            <h2>Welcome, <span id="user-display"></span>!</h2>
+            
+            <button onclick="showNewMessageForm()">New Message</button>
+            
+            <div id="new-message-form" style="display: none;">
+                <input type="text" id="new-recipient" placeholder="Recipient">
+                <textarea id="new-message" placeholder="Message"></textarea>
+                <button id="send-new-message-button" onclick="sendNewMessage()">Send</button>
+                <button onclick="cancelNewMessage()">Cancel</button>
+            </div>
+            
+            <h3>Conversations:</h3>
+            <div id="conversations"></div>
+        </div>
+        
+        <div id="chat-area">
+            <h3 id="chat-partner"></h3>
+            <div id="messages"></div>
+            <div id="message-input" style="display: none;">
+                <input type="text" id="message" placeholder="Type a message...">
+                <button id="send-message-button" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <button id="logout-button" onclick="logout()">
+            <img id="logout-image" alt="Logout">
+        </button>
+    </div>
+    <script src="info.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
